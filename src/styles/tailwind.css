@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --color-primary: #2E86AB; /* Professional blue (primary) - blue-600 */
+    --color-secondary: #1B5E7A; /* Deeper blue variant (secondary) - blue-800 */
+    --color-accent: #F18F01; /* Amber for critical alerts (accent) - amber-500 */
+    
+    /* Background Colors */
+    --color-background: #FAFBFC; /* Soft white background - gray-50 */
+    --color-surface: #FFFFFF; /* Pure white surface - white */
+    
+    /* Text Colors */
+    --color-text-primary: #1A1D23; /* Near-black primary text - gray-900 */
+    --color-text-secondary: #6C757D; /* Medium grey secondary text - gray-500 */
+    
+    /* Status Colors */
+    --color-success: #28A745; /* Medical green success - green-600 */
+    --color-warning: #FFC107; /* Standard warning yellow - yellow-400 */
+    --color-error: #DC3545; /* Clear red error - red-600 */
+    
+    /* Shadow Variables */
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-modal: 0 4px 12px rgba(0, 0, 0, 0.15);
+    
+    /* Border Variables */
+    --border-color: rgba(0, 0, 0, 0.1);
+    --border-radius-sm: 4px;
+    --border-radius-md: 6px;
+    
+    /* Spacing Variables */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-text-primary font-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+  
+  .font-data {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface rounded-md border border-border;
+    box-shadow: var(--shadow-card);
+  }
+  
+  .modal {
+    box-shadow: var(--shadow-modal);
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-secondary transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-primary transition-colors duration-200;
+  }
+  
+  .alert-success {
+    @apply bg-success/10 border-success text-success;
+  }
+  
+  .alert-warning {
+    @apply bg-warning/10 border-warning text-warning;
+  }
+  
+  .alert-error {
+    @apply bg-error/10 border-error text-error;
+  }
+  
+  .transition-smooth {
+    @apply transition-all duration-200 ease-in-out;
+  }
+}
